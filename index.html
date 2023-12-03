@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="boxs">
+       <div class="box">
+        <input type="text" placeholder="0" id="output">
+        <button onclick="Clear()">AC</button>
+        <button onclick="enter('(')">(</button>
+        <button onclick="enter(')')">)</button>
+        <button onclick="enter('/')">/</button>
+        <button onclick="enter('7')">7</button>
+        <button onclick="enter('8')">8</button>
+        <button onclick="enter('9')">9</button>
+        <button onclick="enter('*')">*</button>
+        <button onclick="enter('4')">4</button>
+        <button onclick="enter('5')">5</button>
+        <button onclick="enter('6')">6</button>
+        <button onclick="enter('-')">-</button>
+        <button onclick="enter('1')">1</button>
+        <button onclick="enter('2')">2</button>
+        <button onclick="enter('3')">3</button>
+        <button onclick="enter('+')">+</button>
+        <button onclick="enter('0')">0</button>
+        <button onclick="enter('.')">.</button>
+        <button onclick="del()">del</button>
+        <button onclick="cal()">=</button>
+       </div> 
+    </div>
+
+    <script>
+        let output=document.getElementById("output");
+        function enter(num){
+            output.value += num;
+        }
+        function cal(){
+            try {
+                output.value = eval(output.value);
+            }
+            catch(err){
+                alert("Invalid")
+            }
+        }
+        function Clear(){
+            output.value = "";
+        }
+        function del(){
+            output.value = output.value.slice(0,-1);
+        }
+    </script>
+</body>
+</html>
